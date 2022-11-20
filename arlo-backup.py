@@ -15,14 +15,6 @@ PASSWORD = os.getenv('AB_PASSWORD')
 BPATH = os.getenv('AB_BASEPATH')
 
 
-def GetCvrPlaylist(self, camera, fromDate, toDate):
-    """ This function downloads a Cvr Playlist file for the period fromDate to toDate. """
-    return self.request.get(f'https://{self.BASE_URL}/hmsweb/users/devices/'+camera.get('uniqueId')+'/playlist?fromDate='+fromDate+'&toDate='+toDate)
-
-
-Arlo.GetCvrPlaylist = GetCvrPlaylist
-
-
 def backup():
     arlo = Arlo(USERNAME, PASSWORD, "./gmail.credentials")
     cameras = arlo.GetDevices('camera')
