@@ -35,7 +35,7 @@ def backup():
         except:
             return camera_id
 
-    date_to = (date.today() - timedelta(days=0)).strftime("%Y%m%d")
+    date_to = (date.today() + timedelta(days=1)).strftime("%Y%m%d")
     date_from = (date.today() - timedelta(days=7)).strftime("%Y%m%d")
 
     library = arlo.GetLibrary(date_from, date_to)
